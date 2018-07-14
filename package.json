@@ -1,0 +1,38 @@
+{
+  "name": "syko-interpreter",
+  "version": "1.0.2",
+  "description": "A simple to use and customizable REPL",
+  "main": "./js/main.js",
+  "scripts": {
+    "start": "node ./js/main.js",
+    "monitor": "nodemon ./js/main.js",
+    "build": "rm -rf js/ && grunt > /dev/null",
+    "setup": "npm install --enviroment=production"
+  },
+  "author": "Gurkirat Singh",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@types/figures": "^2.0.0",
+    "@types/readline-sync": "^1.4.3",
+    "chalk": "^2.4.1",
+    "figures": "^2.0.0",
+    "hotkeys-js": "^3.3.5",
+    "readline-sync": "^1.4.9",
+    "tty": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbhaxor/syko-interpreter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tbhaxor/syko-interpreter/issues"
+  },
+  "homepage": "https://github.com/tbhaxor/syko-interpreter#readme",
+  "devDependencies": {
+    "@types/node": "^10.5.2",
+    "grunt": "^1.0.3",
+    "grunt-cli": "^1.2.0",
+    "grunt-ts": "^6.0.0-beta.20",
+    "typescript": "^2.9.2"
+  }
+}
