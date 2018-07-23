@@ -18,5 +18,6 @@ export default {
         "delete": "delete",
         "show": "show",
         "copy": "copy",
+        "execute_external": "exec"
     }
 }

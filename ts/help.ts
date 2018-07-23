@@ -74,7 +74,9 @@ class Help {
     public static printSet(): void {
         console.log("SET HELP");
     }
-
+    public static printExec(): void {
+        console.log("EXEC HELP");
+    }
     public static printDelete(): void {
         console.log("DELETE HELP");
     }
