@@ -32,40 +32,40 @@ function bulkyIsNumber(values: Array<string>): boolean {
     return true;
 }
 
-export default (args: Array<string>, values: VariableType): VariableType => {
+export default (args: Array<string>, vars: VariableType): VariableType => {
     let variable: any = args[1];
     let values_: Array<string> = args.splice(2);
 
     if (variable === undefined || variable === "?") {
         helper.printSet();
-        return values;
+        return vars;
     }
 
     if (values_.length === 1) {
         let v: any = values_[0];
         if (!isNumber(v)) {
-            values[variable] = v;
+            vars[variable] = v;
             if (isQuoted(v))
-                values[variable] = values[variable].slice(1, -1);
+                vars[variable] = vars[variable].slice(1, -1);
         } else {
-            values[variable] = Number(v);
+            vars[variable] = Number(v);
         }
     } else {
 
         if (bulkyIsNumber(values_)) {
-            values[variable] = eval("[" + values_.join(", ") + "]");
+            vars[variable] = eval("[" + values_.join(", ") + "]");
         } else {
             let count = countQuotes(values_);
             if (count % 2 !== 0) {
                 let errIndex = values_.join(" ").indexOf(values_[0][0], 1);
                 console.log(chalk.redBright("Invalid syntax at index" + errIndex));
             } else if (count === 2) {
-                values[variable] = values_.join(" ").slice(1, -1);
+                vars[variable] = values_.join(" ").slice(1, -1);
             }
 
         }
 
     }
-    return values;
+    return vars;
 
 }
