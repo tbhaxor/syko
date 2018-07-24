@@ -14,6 +14,7 @@ exports.default = {
         "delete": "delete",
         "show": "show",
         "copy": "copy",
+        "execute_external": "exec"
     }
 };
 //# sourceMappingURL=commands.js.map

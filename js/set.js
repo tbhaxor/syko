@@ -28,27 +28,27 @@ function bulkyIsNumber(values) {
     });
     return true;
 }
-exports.default = (function (args, values) {
+exports.default = (function (args, vars) {
     var variable = args[1];
     var values_ = args.splice(2);
     if (variable === undefined || variable === "?") {
         help_1.default.printSet();
-        return values;
+        return vars;
     }
     if (values_.length === 1) {
         var v = values_[0];
         if (!isNumber(v)) {
-            values[variable] = v;
+            vars[variable] = v;
             if (isQuoted(v))
-                values[variable] = values[variable].slice(1, -1);
+                vars[variable] = vars[variable].slice(1, -1);
         }
         else {
-            values[variable] = Number(v);
+            vars[variable] = Number(v);
         }
     }
     else {
         if (bulkyIsNumber(values_)) {
-            values[variable] = eval("[" + values_.join(", ") + "]");
+            vars[variable] = eval("[" + values_.join(", ") + "]");
         }
         else {
             var count = countQuotes(values_);
@@ -57,10 +57,10 @@ exports.default = (function (args, values) {
                 console.log(chalk_1.default.redBright("Invalid syntax at index" + errIndex));
             }
             else if (count === 2) {
-                values[variable] = values_.join(" ").slice(1, -1);
+                vars[variable] = values_.join(" ").slice(1, -1);
             }
         }
     }
-    return values;
+    return vars;
 });
 //# sourceMappingURL=set.js.map

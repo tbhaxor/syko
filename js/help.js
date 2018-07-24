@@ -31,6 +31,9 @@ var Help = (function () {
     Help.printSet = function () {
         console.log("SET HELP");
     };
+    Help.printExec = function () {
+        console.log("EXEC HELP");
+    };
     Help.printDelete = function () {
         console.log("DELETE HELP");
     };
