@@ -3,6 +3,7 @@ import { VariableType } from "./Interfaces";
 import helper from "./help";
 import { isContaining } from "./globals";
 import chalk from "chalk";
+import set from "./set";
 
 export default (args: Array<string>, vars: VariableType): VariableType => {
 
@@ -43,7 +44,7 @@ export default (args: Array<string>, vars: VariableType): VariableType => {
         console.log(x.stdout.toString().split("\n").filter(Boolean).join("\n"));
     } else {
         savesTo.forEach((variable: any) => {
-            vars[variable] = x.stdout.toString();
+            vars = set(["set", variable, x.stdout.toString()], vars);
         });
     }
 
