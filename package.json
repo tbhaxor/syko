@@ -16,9 +16,7 @@
     "@types/readline-sync": "^1.4.3",
     "chalk": "^2.4.1",
     "figures": "^2.0.0",
-    "hotkeys-js": "^3.3.5",
-    "readline-sync": "^1.4.9",
-    "tty": "^1.0.1"
+    "readline-sync": "^1.4.9"
   },
   "repository": {
     "type": "git",
