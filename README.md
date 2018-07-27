@@ -1,4 +1,5 @@
-# Syko
+
+# Syko [![TS](https://img.shields.io/badge/TypeScript-2.9.x-blue.svg)](https://www.typescriptlang.org/) ![Status](https://img.shields.io/badge/Status-Under%20Development-red.svg)
 
 Syko is an easy and customisable interpreter with flexible commands.
 
