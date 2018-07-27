@@ -3,6 +3,12 @@
 
 Syko is an easy and customisable interpreter with flexible commands.
 
+<div>
+
+![image](https://user-images.githubusercontent.com/28386721/43343194-f7d14158-9202-11e8-897c-9b3388b06bb5.png) ![image](https://user-images.githubusercontent.com/28386721/43343253-38379346-9203-11e8-8d29-291cf9897f84.png)
+
+</div>
+
 # Requirements
 + [NodeJS](https://node.org)
 + Terminal
