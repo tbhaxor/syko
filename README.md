@@ -17,6 +17,7 @@ Syko is an easy and customisable interpreter with flexible commands.
     ```
     $ npm start
     ```
+
 ### For Users
 1. Install dependencies
     ```
