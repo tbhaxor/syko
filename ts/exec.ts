@@ -1,4 +1,4 @@
-import { execSync, exec, spawn, spawnSync } from "child_process";
+import { spawnSync } from "child_process";
 import { VariableType } from "./Interfaces";
 import helper from "./help";
 import { isContaining } from "./globals";
@@ -36,15 +36,19 @@ export default (args: Array<string>, vars: VariableType): VariableType => {
     // printing error if found error and returning
     let fullCmd: string = command + " " + actCommArg.join(" ");
     if (x.stderr.toString() !== "") {
-        console.log(chalk.redBright(`Error: Can't execute ${fullCmd} `));
+        console.log(chalk.redBright(`Error: Can't execute "${fullCmd}" `));
         return vars;
     }
 
     if (savesTo === null) {
         console.log(x.stdout.toString().split("\n").filter(Boolean).join("\n"));
     } else {
+        var output: any = x.stdout.toString();
+        if (output.indexOf("\n") !== -1) {
+            output = output.split("\n").filter(Boolean);
+        }
         savesTo.forEach((variable: any) => {
-            vars = set(["set", variable, x.stdout.toString()], vars);
+            vars = set(["set", variable, output], vars);
         });
     }
 
