@@ -3,9 +3,10 @@
 
 Syko is an easy and customisable interpreter with flexible commands.
 
-<div>
+<div style="text-align:center">
 
-![image](https://user-images.githubusercontent.com/28386721/43343194-f7d14158-9202-11e8-897c-9b3388b06bb5.png) ![image](https://user-images.githubusercontent.com/28386721/43343253-38379346-9203-11e8-8d29-291cf9897f84.png)
+![image](https://user-images.githubusercontent.com/28386721/43351740-47e600ee-9234-11e8-98bc-e12898f6e631.png)
+
 
 </div>
 
@@ -13,6 +14,29 @@ Syko is an easy and customisable interpreter with flexible commands.
 + [NodeJS](https://node.org)
 + Terminal
 + GNU Linux / OSX
+
+# Commands
+
+```
+→ ?
+-=[ Global Commands ]=-
+	?		Shows this help message
+	clear		Clears the console output
+	exit		Exits out from terminal
+	lic		Prints license
+	info		Prints information about the program
+-=[ REPL Commands ]=-
+	set		Sets the variable in variable DB
+	delete		Unsets the variable from variable DB
+	copy		Copies the content of one variable to others
+	exec		Executes the external system command.
+			Also saves to a variable is used save-to argument
+	show		Shows the content of variable in pretty format
+	desc		Describes a variable
+
+Note : To view more about commands pass '?' as their first argument i.e exec ? or just type the command and hit enter
+
+```
 
 # How to run
 ### For Developers
