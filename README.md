@@ -5,7 +5,7 @@ Syko is an easy and customisable interpreter with flexible commands.
 
 <div style="text-align:center">
 
-![image](https://user-images.githubusercontent.com/28386721/43351740-47e600ee-9234-11e8-98bc-e12898f6e631.png)
+<img src="https://user-images.githubusercontent.com/28386721/43351740-47e600ee-9234-11e8-98bc-e12898f6e631.png">
 
 
 </div>
