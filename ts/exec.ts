@@ -1,3 +1,12 @@
+/**
+ * @name exec.ts
+ * @description The external command executing module
+ * @returns New variable state
+ *
+ * @author Gurkirat Singh <tbhaxor@gmail.com>
+ */
+
+// importing modules
 import { spawnSync } from "child_process";
 import { VariableType } from "./Interfaces";
 import helper from "./help";
@@ -5,6 +14,7 @@ import { isContaining } from "./globals";
 import chalk from "chalk";
 import set from "./set";
 
+// default exporting the function with return type of VariableType
 export default (args: Array<string>, vars: VariableType): VariableType => {
 
     // building data
@@ -50,10 +60,13 @@ export default (args: Array<string>, vars: VariableType): VariableType => {
         if (output.indexOf("\n") !== -1) {
             output = output.split("\n").filter(Boolean);
         }
+
+        // if save-to is passed then set to the output to the variables passed
         savesTo.forEach((variable: any) => {
             vars = set(["set", variable, output], vars);
         });
     }
 
+    // returning the variable state
     return vars;
 }
