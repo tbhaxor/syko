@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var commands_1 = require("./commands");
 var chalk_1 = require("chalk");
 var globals_1 = require("./globals");
+var figures_1 = require("figures");
 var Help = (function () {
     function Help() {
     }
@@ -31,22 +32,84 @@ var Help = (function () {
         console.log("\n" + chalk_1.default.bold(chalk_1.default.blueBright("Note : ")) + "To view more about commands pass '?' as their first argument i.e " + chalk_1.default.inverse("exec ?") + " or just type the command and hit enter");
     };
     Help.printCopy = function () {
-        console.log("COPY HELP");
+        console.log("" + chalk_1.default.yellowBright("[ Help ]"));
+        console.log("\tThe " + chalk_1.default.inverse(commands_1.default.repl.copy) + " command copies the content of one variable to one or more variables.");
+        console.log();
+        console.log("" + chalk_1.default.blueBright("[ Usage ]"));
+        console.log("\t" + commands_1.default.repl.copy + " {variable whose content to be copied} {variable 1} {variable 2} {variable 3} ... {variable n}");
+        console.log();
+        console.log("" + chalk_1.default.magentaBright("[ Example ]"));
+        console.log("\t" + figures_1.pointer + " Copy value of one variable to other (copy a to b)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.copy + " a b");
+        console.log("\t" + figures_1.pointer + " Copy value of one variable to more variables (copy a to b and c and d)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.copy + " a b c d");
     };
     Help.printDump = function () {
-        console.log("DUMP HELP");
+        console.log("" + chalk_1.default.yellowBright("[ Help ]"));
+        console.log("\tThe " + chalk_1.default.inverse(commands_1.default.repl.describe) + " command describes about the name, value and type of one or more variables.");
+        console.log();
+        console.log("" + chalk_1.default.blueBright("[ Usage ]"));
+        console.log("\t" + commands_1.default.repl.describe + " {variable 1} {variable 2} {variable 3} ... {variable n}");
+        console.log();
+        console.log("" + chalk_1.default.magentaBright("[ Example ]"));
+        console.log("\t" + figures_1.pointer + " Describing one variable (describing the properties of a)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.describe + " a");
+        console.log("\t" + figures_1.pointer + " Describing more than one variables (describing the properties of a, b and c)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.describe + " a b c");
     };
     Help.printSet = function () {
-        console.log("SET HELP");
+        console.log("" + chalk_1.default.yellowBright("[ Help ]"));
+        console.log("\tThe " + chalk_1.default.inverse(commands_1.default.repl.set) + " command initializes a variable with value. It automatically converts type of value. For example if you enter 10 it will store as number if you will enter any name it will store as string or if you will add more value then it will store it as an array.");
+        console.log();
+        console.log("" + chalk_1.default.blueBright("[ Usage ]"));
+        console.log("\t" + commands_1.default.repl.set + " {variable name}  {value(s)}");
+        console.log();
+        console.log("" + chalk_1.default.magentaBright("[ Example ]"));
+        console.log("\t" + figures_1.pointer + " Setting a number variable (set num to 10)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.set + " num 10");
+        console.log("\t" + figures_1.pointer + " Setting a string variable (set name to terabyte)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.set + " name terabyte");
+        console.log("\t" + figures_1.pointer + " Setting an array variable (set nums to [1,2,3,4,5,6])");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.set + " nums 1 2 3 4 5 6");
     };
     Help.printExec = function () {
-        console.log("EXEC HELP");
+        console.log("" + chalk_1.default.yellowBright("[ Help ]"));
+        console.log("\tThe " + chalk_1.default.inverse(commands_1.default.repl.execute_external) + " command executes the external command and prints it on the console after its completed its execution. Also saves the output to a variable splitting by '\\n' char it save-to if passed in argument");
+        console.log();
+        console.log("" + chalk_1.default.blueBright("[ Usage ]"));
+        console.log("\t" + commands_1.default.repl.execute_external + " {command [args]}  [save-to {variable}]");
+        console.log();
+        console.log("" + chalk_1.default.magentaBright("[ Example ]"));
+        console.log("\t" + figures_1.pointer + " Executing a command (show the output of ls command)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.execute_external + " ls");
+        console.log("\t" + figures_1.pointer + " Executing a command with its arguments (show the output of ls -la command)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.execute_external + " ls -la");
+        console.log("\t" + figures_1.pointer + " Executing a command with its arguments and save it to a variable(save the output of ls -la command to output)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.execute_external + " ls -la save-to output");
     };
     Help.printDelete = function () {
-        console.log("DELETE HELP");
+        console.log("" + chalk_1.default.yellowBright("[ Help ]"));
+        console.log("\tThe " + chalk_1.default.inverse(commands_1.default.repl.delete) + " command deletes the variable from the big container of set values");
+        console.log();
+        console.log("" + chalk_1.default.blueBright("[ Usage ]"));
+        console.log("\t" + commands_1.default.repl.delete + " {variable 1} {variable 2} {variable 3} ... {variable n}");
+        console.log();
+        console.log("" + chalk_1.default.magentaBright("[ Example ]"));
+        console.log("\t" + figures_1.pointer + " Deleting a variable (delete a)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.delete + " a");
+        console.log("\t" + figures_1.pointer + " Deleting more than one variables (delete a, b, c, and d)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.delete + " a b c d");
     };
     Help.printShow = function () {
-        console.log("SHOW HELP");
+        console.log("" + chalk_1.default.yellowBright("[ Help ]"));
+        console.log("\tThe " + chalk_1.default.inverse(commands_1.default.repl.show) + " command prints the value of the variable set in the variable container. Also it prints the values of an array linewise");
+        console.log();
+        console.log("" + chalk_1.default.blueBright("[ Usage ]"));
+        console.log("\t" + commands_1.default.repl.show + " {variable}");
+        console.log();
+        console.log("" + chalk_1.default.magentaBright("[ Example ]"));
+        console.log("\t" + figures_1.pointer + " Showing the value of a variable (print the value of num)");
+        console.log("\t\t" + figures_1.arrowRight + " " + commands_1.default.repl.show + " num");
     };
     Help.helpText = [
         {

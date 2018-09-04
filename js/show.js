@@ -13,14 +13,11 @@ exports.default = (function (args, vars) {
     }
     else {
         if (typeof vars[__var__] == "object") {
-            vars[__var__].forEach(function (element) {
-                console.log(element);
-            });
+            console.log(vars[__var__].join("\n"));
         }
         else {
             console.log(vars[__var__]);
         }
     }
-    return;
 });
 //# sourceMappingURL=show.js.map

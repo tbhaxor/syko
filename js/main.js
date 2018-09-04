@@ -16,7 +16,7 @@ var args;
 var tmp;
 console.clear();
 console.log("Welcome to Syko Interpreter");
-console.log("Current Version: v1.0.1");
+console.log("Current Version: v1.4.1");
 console.log("Type ? for help\n");
 while (true) {
     args = readline_sync_1.question(chalk_1.default.bold(figures_1.arrowRight) + " ").split(" ").filter(Boolean);
