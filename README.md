@@ -1,11 +1,11 @@
 
-# Syko [![TS](https://img.shields.io/badge/TypeScript-2.9.x-blue.svg)](https://www.typescriptlang.org/) ![Status](https://img.shields.io/badge/Status-Under%20Development-red.svg)
+# Syko [![TS](https://img.shields.io/badge/TypeScript-2.9.x-blue.svg)](https://www.typescriptlang.org/) ![Status](https://img.shields.io/badge/Status-Under%20Development-red.svg) ![Version](https://img.shields.io/badge/Version-1.4.1-yellow.svg)
 
-Syko is an easy and customisable interpreter with flexible commands.
+Syko is an easy and customisable interpreter with flexible commands
 
 <div style="text-align:center">
 
-<img src="https://user-images.githubusercontent.com/28386721/43351740-47e600ee-9234-11e8-98bc-e12898f6e631.png">
+<img src="https://user-images.githubusercontent.com/28386721/45036650-aaa15a80-b07a-11e8-9d9e-96abf3d0361f.png">
 
 
 </div>
@@ -13,7 +13,44 @@ Syko is an easy and customisable interpreter with flexible commands.
 # Requirements
 + [NodeJS](https://node.org)
 + Terminal
-+ GNU Linux / OSX
+
+# Changing Commands
+_all commands are registered in `ts/commands.ts`_
+```ts
+/**
+ * NOTE TO CHANGE THE VARIABLE YOU MUST CHANGE THE "VALUE" OF THE APPROPRIATE KEY
+ * 
+ * For example
+ *      suppose you want to change the "exit" command to "q",
+ *      then change "exit" (right hand side) to "q"(the value)
+ * 
+ *  it may look like
+ *     .......
+ *     "help": "?",  // help command
+ *     "exit": "q", // exit interpreter command
+ *     .......
+ */
+
+export default {
+    "globals": { // global commands
+        "help": "?", // help command
+        "exit": "exit",  // exit interpreter command
+        "clear": "clear", // clear console command
+        "info": "info",  // information command
+        "lic": "lic"  // license command
+    },
+    "repl": { // repl commands
+        "set": "set", // set new variable command
+        "describe": "desc", // description for variable command
+        "delete": "delete",  // delete variable command
+        "show": "show",  // show i.e print varible content
+        "copy": "copy",  // copy content of one variable to many
+        "execute_external": "exec"  // execute external commands
+    }
+}
+
+
+```
 
 # Commands
 
@@ -69,7 +106,6 @@ rmdir  js /Q /S && grunt > null
 
 # How to build
 _only for developers_
-    ```
+
     $ npm run build
-    ```
 
