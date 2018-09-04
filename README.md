@@ -12,6 +12,8 @@ Syko is an easy and customisable interpreter with flexible commands
 
 # Requirements
 + [NodeJS](https://node.org)
++ [GruntJS](https://gruntjs.com/)
++ [TypeScript](https://www.typescriptlang.org/)
 + Terminal
 
 # Changing Commands
