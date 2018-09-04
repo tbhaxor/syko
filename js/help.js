@@ -1,12 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+Object.defineProperty(exports, "__esModule", { value: true });
 var commands_1 = require("./commands");
 var chalk_1 = require("chalk");
 var globals_1 = require("./globals");
 var Help = (function () {
-    function Help() {}
+    function Help() {
+    }
     Help.getCommandDetail = function (cmd) {
         this.helpText.forEach(function (help) {
             if (help.command === cmd)
@@ -46,7 +45,11 @@ var Help = (function () {
     Help.printDelete = function () {
         console.log("DELETE HELP");
     };
-    Help.helpText = [{
+    Help.printShow = function () {
+        console.log("SHOW HELP");
+    };
+    Help.helpText = [
+        {
             command: commands_1.default.globals.help,
             type: globals_1.CommandType.GLOBAL,
             acceptsArgs: false,

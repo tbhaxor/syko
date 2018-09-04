@@ -10,6 +10,7 @@ import describe from "./describe";
 import _delete from "./delete";
 import copy from "./copy";
 import exec from "./exec";
+import show from "./show";
 
 // global variables
 var variables: VariableType = {};
@@ -72,6 +73,9 @@ while (true) {
             break;
         case commands.repl.execute_external: // exec
             variables = exec(args, variables);
+            break;
+        case commands.repl.show:
+            show(args, variables);
             break;
         //#endregion
 

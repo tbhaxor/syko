@@ -159,6 +159,9 @@ class Help {
     public static printDelete(): void {
         console.log("DELETE HELP");
     }
+    public static printShow(): void {
+        console.log("SHOW HELP");
+    }
 }
 
 export default Help;

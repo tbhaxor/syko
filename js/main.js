@@ -10,6 +10,7 @@ var describe_1 = require("./describe");
 var delete_1 = require("./delete");
 var copy_1 = require("./copy");
 var exec_1 = require("./exec");
+var show_1 = require("./show");
 var variables = {};
 var args;
 var tmp;
@@ -57,6 +58,9 @@ while (true) {
             break;
         case commands_1.default.repl.execute_external:
             variables = exec_1.default(args, variables);
+            break;
+        case commands_1.default.repl.show:
+            show_1.default(args, variables);
             break;
         default:
             console.log(chalk_1.default.redBright("Invalid command"));
