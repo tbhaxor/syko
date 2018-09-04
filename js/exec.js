@@ -4,6 +4,7 @@ var child_process_1 = require("child_process");
 var help_1 = require("./help");
 var globals_1 = require("./globals");
 var chalk_1 = require("chalk");
+var set_1 = require("./set");
 exports.default = (function (args, vars) {
     var command = args[1];
     var commandArgs = args.splice(2);
@@ -24,15 +25,19 @@ exports.default = (function (args, vars) {
     });
     var fullCmd = command + " " + actCommArg.join(" ");
     if (x.stderr.toString() !== "") {
-        console.log(chalk_1.default.redBright("Error: Can't execute " + fullCmd + " "));
+        console.log(chalk_1.default.redBright("Error: Can't execute \"" + fullCmd + "\" "));
         return vars;
     }
     if (savesTo === null) {
         console.log(x.stdout.toString().split("\n").filter(Boolean).join("\n"));
     }
     else {
+        var output = x.stdout.toString();
+        if (output.indexOf("\n") !== -1) {
+            output = output.split("\n").filter(Boolean);
+        }
         savesTo.forEach(function (variable) {
-            vars[variable] = x.stdout.toString();
+            vars = set_1.default(["set", variable, output], vars);
         });
     }
     return vars;

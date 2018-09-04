@@ -40,10 +40,13 @@ export default (args: Array<string>, vars: VariableType): VariableType => {
         return vars;
     }
 
+    // if save-to is null then echo the output, otherwise assign to variables
     if (savesTo === null) {
         console.log(x.stdout.toString().split("\n").filter(Boolean).join("\n"));
     } else {
         var output: any = x.stdout.toString();
+
+        // split and filter out empty string when there exists "\n"
         if (output.indexOf("\n") !== -1) {
             output = output.split("\n").filter(Boolean);
         }

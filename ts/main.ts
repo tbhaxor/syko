@@ -3,8 +3,8 @@ import { VariableType } from "./Interfaces";
 import chalk from "chalk";
 import helper from "./help";
 import set from "./set";
-import { question, BasicOptions } from "readline-sync";
-import { arrowRight } from "figures";
+import { question } from "readline-sync";
+import { arrowRight, pointer } from "figures";
 import commands from "./commands";
 import describe from "./describe";
 import _delete from "./delete";
@@ -15,6 +15,9 @@ import exec from "./exec";
 var variables: VariableType = {};
 var args: Array<string>;
 var tmp: string;
+
+// clearing the screen
+console.clear();
 
 // info message
 console.log("Welcome to Syko Interpreter");
@@ -32,6 +35,7 @@ while (true) {
     tmp = args[0].toLowerCase();
 
     switch (tmp) {
+        //#region GLOBAL ASSETS
         case commands.globals.clear: // clear
             console.clear();
             break;
@@ -41,6 +45,19 @@ while (true) {
         case commands.globals.help: // ?
             helper.printAll();
             break;
+        case commands.globals.lic: // lic
+            console.log("MIT")
+            break;
+        case commands.globals.info:  // info
+            console.log(chalk.yellow(`Syko Interpeter ${pointer} An easy to use and customisable interpreter`));
+            console.log("Designed By : Gurkirat Singh");
+            console.log("Platform : Cross Platform");
+            console.log("Support Contact : tbhaxor@gmail.com");
+            console.log(`Visit ${chalk.inverse("https://tbhaxor.me/syko")}`)
+            break;
+        //#endregion
+
+        //#region  REPL ASSETS
         case commands.repl.set: // set
             variables = set(args, variables);
             break;
@@ -56,6 +73,8 @@ while (true) {
         case commands.repl.execute_external: // exec
             variables = exec(args, variables);
             break;
+        //#endregion
+
         default:
             console.log(chalk.redBright("Invalid command"));
             break;

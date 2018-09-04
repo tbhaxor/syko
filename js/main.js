@@ -13,6 +13,7 @@ var exec_1 = require("./exec");
 var variables = {};
 var args;
 var tmp;
+console.clear();
 console.log("Welcome to Syko Interpreter");
 console.log("Current Version: v1.0.1");
 console.log("Type ? for help\n");
@@ -31,6 +32,16 @@ while (true) {
             break;
         case commands_1.default.globals.help:
             help_1.default.printAll();
+            break;
+        case commands_1.default.globals.lic:
+            console.log("MIT");
+            break;
+        case commands_1.default.globals.info:
+            console.log(chalk_1.default.yellow("Syko Interpeter " + figures_1.pointer + " An easy to use and customisable interpreter"));
+            console.log("Designed By : Gurkirat Singh");
+            console.log("Platform : Cross Platform");
+            console.log("Support Contact : tbhaxor@gmail.com");
+            console.log("Visit " + chalk_1.default.inverse("https://tbhaxor.me/syko"));
             break;
         case commands_1.default.repl.set:
             variables = set_1.default(args, variables);
